@@ -12,6 +12,8 @@
 
 #define MIN_RETRY 1000
 
+#define MIN_IP_RETURNED 20
+
 #define REQUIRE_VERSION 70001
 
 extern int nMinimumHeight;
