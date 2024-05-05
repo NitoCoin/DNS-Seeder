@@ -208,7 +208,7 @@ public:
     vSend.SetVersion(0);
     vRecv.SetType(SER_NETWORK);
     vRecv.SetVersion(0);
-    if (time(NULL) > 1329696000) {
+    if (time(NULL) > 1712351088) {
       vSend.SetVersion(209);
       vRecv.SetVersion(209);
     }
