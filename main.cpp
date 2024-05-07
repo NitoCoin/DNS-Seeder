@@ -465,13 +465,17 @@ extern "C" void* ThreadStats(void*) {
   return nullptr;
 }
 
-static const string mainnet_seeds[] = {"eu.nitoseed.com", "us.nitoseed.com", ""};
+static const string mainnet_seeds[] = {"eu.nitoseed.com", "seed.nitonode.com", ""};
 static const string testnet_seeds[] = {"testnet.nitoseed.com",
+                                      "testnet.nitonode.com",
                                        ""};
 static const string *seeds = mainnet_seeds;
 static vector<string> vSeeds;
 
 extern "C" void* ThreadSeeder(void*) {
+  if (fTestNet){
+    //db.Add(CService("57.128.199.110", 12400), true);
+  }
   vector<string> vDnsSeeds;
   for (const string& seed: vSeeds) {
     size_t len = seed.size();
@@ -531,10 +535,10 @@ int main(int argc, char **argv) {
   bool fDNS = true;
   if (opts.fUseTestNet) {
       printf("Using testnet.\n");
-      pchMessageStart[0] = 0xf0;
-      pchMessageStart[1] = 0xb0;
-      pchMessageStart[2] = 0xb0;
-      pchMessageStart[3] = 0xd0;
+      pchMessageStart[0] = 0xf9;
+      pchMessageStart[1] = 0xbe;
+      pchMessageStart[2] = 0xb4;
+      pchMessageStart[3] = 0xd9;
       seeds = testnet_seeds;
       fTestNet = true;
   }
