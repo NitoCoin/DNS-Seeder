@@ -474,8 +474,10 @@ static vector<string> vSeeds;
 
 extern "C" void* ThreadSeeder(void*) {
   if (fTestNet){
+    // Testnet node
     db.Add(CService("57.128.199.110", 12400), true);
   }else{
+    // Mainnet node
     db.Add(CService("5.75.137.155", 12200), true);
   }
 
