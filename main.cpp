@@ -474,8 +474,11 @@ static vector<string> vSeeds;
 
 extern "C" void* ThreadSeeder(void*) {
   if (fTestNet){
-    //db.Add(CService("57.128.199.110", 12400), true);
+    db.Add(CService("57.128.199.110", 12400), true);
+  }else{
+    db.Add(CService("5.75.137.155", 12200), true);
   }
+
   vector<string> vDnsSeeds;
   for (const string& seed: vSeeds) {
     size_t len = seed.size();
