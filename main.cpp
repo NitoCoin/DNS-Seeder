@@ -465,7 +465,7 @@ extern "C" void* ThreadStats(void*) {
   return nullptr;
 }
 
-static const string mainnet_seeds[] = {"eu.nitoseed.com", "seed.nitonode.com", ""};
+static const string mainnet_seeds[] = {"eu.nitoseed.com", "seed.nitonode.com", "seed.nito.tools", ""};
 static const string testnet_seeds[] = {"testnet.nitoseed.com",
                                       "testnet.nitonode.com",
                                        ""};
